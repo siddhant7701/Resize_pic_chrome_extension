@@ -1,0 +1,12 @@
+{
+    "name": "Resize",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "author": "Siddhant Srivastava",
+    "action": {
+        "default_title": "Resize",
+        "default_popup": "index.html",
+        "default_icon": "logo.png",
+        "permissions": ["activeTab"]
+    }
+}

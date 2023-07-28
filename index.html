@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Select An Image to Resize 👇</h1>
+    <p id="text">
+        Select an image and it will be resized into 200px image and you can then download the image.
+    </p>
+
+    <form id="my-form" action="" method="post" r>
+        <input type="file" name="photo" accept="image/*" required />
+        <button type="submit">Resize Image</button>
+    </form>
+
+    <img id="img-preview" style="width:150px;">
+    <script src="app.js"></script>
+</body>
+
+</html>
