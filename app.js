@@ -3,7 +3,6 @@ const form = document.querySelector('#my-form');
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
 
-    // Get data URI of the selected image
     const formData = new FormData(e.currentTarget);
     const photoField = formData.get('photo');
     const dataUri = await dataUriFromFormField(photoField);
@@ -12,31 +11,27 @@ form.addEventListener('submit', async(e) => {
     imgEl.addEventListener('load', () => {
         const resizedDataUri = resizeImage(imgEl, 200);
         document.querySelector('#img-preview').src = resizedDataUri;
+
+        const downloadLink = document.querySelector('#download-link');
+        downloadLink.href = resizedDataUri;
+        downloadLink.download = 'resized_image.png';
+        downloadLink.style.display = 'block';
     });
     imgEl.src = dataUri;
 });
 
-function dataUriFromFormField(field) {
+async function dataUriFromFormField(field) {
     return new Promise((resolve) => {
         const reader = new FileReader();
-
-        reader.addEventListener('load', () => {
-            resolve(reader.result);
-        });
-
+        reader.addEventListener('load', () => resolve(reader.result));
         reader.readAsDataURL(field);
     });
 }
 
-function resizeImage(imgEl, wantedWidth) {
+function resizeImage(imgEl, size) {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
-
-    const aspect = imgEl.width / imgEl.height;
-
-    canvas.width = wantedWidth;
-    canvas.height = wantedWidth / aspect;
-
-    ctx.drawImage(imgEl, 0, 0, canvas.width, canvas.height);
+    canvas.width = canvas.height = size;
+    ctx.drawImage(imgEl, 0, 0, size, size);
     return canvas.toDataURL();
 }
