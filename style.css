@@ -16,6 +16,11 @@ form {
     color: red;
 }
 
+#download-link {
+    color: red;
+    text-decoration: none;
+}
+
 img {
     margin: 1rem 0;
 }
