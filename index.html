@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resize</title>
+    <title>Image Resizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Select An Image to Resize 👇</h1>
-    <p id="text">
-        Select an image and it will be resized into 200px image and you can then download the image.
-    </p>
+    <div class="container">
+        <h1>Image Resizer</h1>
+        <p>Select an image and it will be resized to 200px width.</p>
 
-    <form id="my-form" action="" method="post" r>
-        <input type="file" name="photo" accept="image/*" required />
-        <button type="submit">Resize Image</button>
-    </form>
+        <form id="my-form" action="" method="post">
+            <input type="file" name="photo" accept="image/*" required />
+            <button type="submit" class="button">Resize Image</button>
+        </form>
 
-    <img id="img-preview" style="width:150px;">
+        <div class="image-container">
+            <img id="img-preview">
+            <button type="submit" class="button"><a  id="download-link" style="display: none;">Download Resized Image</a>
+            </button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 
