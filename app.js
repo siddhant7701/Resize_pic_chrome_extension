@@ -7,9 +7,11 @@ form.addEventListener('submit', async(e) => {
     const photoField = formData.get('photo');
     const dataUri = await dataUriFromFormField(photoField);
 
+    const imgSize = parseInt(document.getElementById('imgerq').value);
+    const imgreq = Math.max(imgSize, 1);
     const imgEl = document.createElement('img');
     imgEl.addEventListener('load', () => {
-        const resizedDataUri = resizeImage(imgEl, 200);
+        const resizedDataUri = resizeImage(imgEl, imgreq);
         document.querySelector('#img-preview').src = resizedDataUri;
 
         const downloadLink = document.querySelector('#download-link');
@@ -19,7 +21,6 @@ form.addEventListener('submit', async(e) => {
     });
     imgEl.src = dataUri;
 });
-
 async function dataUriFromFormField(field) {
     return new Promise((resolve) => {
         const reader = new FileReader();
