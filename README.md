@@ -1,11 +1,11 @@
 # Image Resizer Chrome Extension
 
-Image Resizer Chrome Extension is a simple extension that allows you to select an image, resize it to a width of 200 pixels, and then download the resized image.
+Image Resizer Chrome Extension is a simple extension that allows you to select an image, resize it to the size you want, and then download the resized image.
 
 ## Features
 
 - Upload an image of your choice.
-- Automatically resize the image to 200 pixels width while maintaining the aspect ratio.
+- Resize the image to your req pixel size while maintaining the aspect ratio.
 - Preview the resized image before downloading.
 - Download the resized image directly to your device.
 
