@@ -7,6 +7,7 @@ Image Resizer Chrome Extension is a simple extension that allows you to select a
 - Upload an image of your choice.
 - Resize the image to your req pixel size while maintaining the aspect ratio.
 - Preview the resized image before downloading.
+- Select the type of file you want to download between JPEG and PNG image formats.
 - Download the resized image directly to your device.
 
 ## Installation
