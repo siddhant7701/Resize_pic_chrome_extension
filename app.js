@@ -1,5 +1,7 @@
 const form = document.querySelector('#my-form');
 
+// ... (rest of your JavaScript code) ...
+
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
 
@@ -7,16 +9,17 @@ form.addEventListener('submit', async(e) => {
     const photoField = formData.get('photo');
     const dataUri = await dataUriFromFormField(photoField);
 
-    const imgSize = parseInt(document.getElementById('imgerq').value);
-    const imgreq = Math.max(imgSize, 1);
+    const outputFormat = document.getElementById('output-format').value;
+    const imgSize = parseInt(document.getElementById('img-size').value);
+    const imgReq = Math.max(imgSize, 1);
     const imgEl = document.createElement('img');
     imgEl.addEventListener('load', () => {
-        const resizedDataUri = resizeImage(imgEl, imgreq);
+        const resizedDataUri = resizeImage(imgEl, imgReq);
         document.querySelector('#img-preview').src = resizedDataUri;
 
         const downloadLink = document.querySelector('#download-link');
         downloadLink.href = resizedDataUri;
-        downloadLink.download = 'resized_image.png';
+        downloadLink.download = `resized_image.${outputFormat}`;
         downloadLink.style.display = 'block';
     });
     imgEl.src = dataUri;
