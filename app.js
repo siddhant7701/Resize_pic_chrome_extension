@@ -1,6 +1,5 @@
 const form = document.querySelector('#my-form');
 
-// ... (rest of your JavaScript code) ...
 
 form.addEventListener('submit', async(e) => {
     e.preventDefault();
