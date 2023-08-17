@@ -11,11 +11,15 @@
 <body>
     <div class="container">
         <h1>Image Resizer</h1>
-        <p>Select an image and it will be resized to 200px width.</p>
+        <p>Select an image and choose the output format and required size.</p>
 
         <form id="my-form" action="" method="post">
             <input type="file" name="photo" accept="image/*" required />
-            <input type="number" id="imgerq" placeholder="Size in pixels" required/>
+            <select id="output-format" required>
+                <option value="jpeg">JPEG</option>
+                <option value="png">PNG</option>
+            </select>
+            <input type="number" id="img-size" placeholder="Required size in pixels" required />
             <button type="submit" class="button">Resize Image</button>
         </form>
 
