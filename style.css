@@ -1,37 +1,32 @@
-html {
+body {
     font-family: sans-serif;
     font-size: 15px;
     background-color: aliceblue;
-}
-
-body {
     padding: 0 1rem;
     max-width: 30rem;
     margin: 0 auto;
+    background: linear-gradient(135deg, #3498db, #8ce73c);
 }
 
 form {
     border: 1px solid #f5f5f5;
     padding: 1rem;
-    color: red;
-}
-
-#download-link {
-    color: red;
-    text-decoration: none;
+    color: rgb(255, 0, 0);
 }
 
 img {
     margin: 1rem 0;
 }
 
-#text {
-    color: rgb(24, 83, 83);
+#ip {
+    cursor: pointer;
 }
 
 #download-link {
     display: inline-block;
-    width: auto;
+    padding: 5px;
+    max-width: fit-content;
+    text-decoration: none;
     background-color: #f2f2f2;
     border: 2px solid #ccc;
     text-decoration: none;
@@ -40,6 +35,15 @@ img {
 }
 
 #download-link:hover {
-    background-color: #333;
-    color: #f2f2f2;
+    background-color: #007bff;
+    color: #ffffff;
+    transform: scaleX(1);
+}
+
+.button {
+    cursor: pointer;
+    background-color: #fff;
+    text-align: center;
+    border: 2px solid;
+    border-radius: 4px;
 }
