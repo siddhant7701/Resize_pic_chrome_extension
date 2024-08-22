@@ -1,54 +1,122 @@
+:root {
+  --primary-color: #34a6f3;
+  --secondary-color: #ededed;
+  --text-color: #333;
+  --background-color: #f9f9f9;
+  --accent-color: #ff6b6b;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 body {
-    font-size: 15px;
-    background-color: aliceblue;
-    padding: 0 1rem;
-    max-width: 30rem;
-    margin: 0 auto;
-    background: linear-gradient(135deg, #34a6f3, #ededed);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background-attachment: fixed;
+  padding: 2rem 1rem;
+  max-width: 40rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 form {
-    border: 1px solid #f5f5f5;
-    padding: 1rem;
-    color: rgb(255, 0, 0);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+form:hover {
+  transform: translateY(-5px);
 }
 
 h1 {
-    color: #1b1b1b;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 img {
-    margin: 1rem 0;
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
 }
 
 #ip {
-    cursor: pointer;
+  cursor: pointer;
+  padding: 0.5rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+#ip:hover, #ip:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-color);
 }
 
 #download-link {
-    display: inline-block;
-    padding: 5px;
-    max-width: fit-content;
-    text-decoration: none;
-    background-color: #f2f2f2;
-    border: 2px solid #ccc;
-    text-decoration: none;
-    color: #333;
-    border-radius: 5px;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
 
 #download-link:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    transform: scaleX(1);
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .button {
-    cursor: pointer;
-    background-color: #fff;
-    text-align: center;
-    border: 2px solid;
-    border-radius: 4px;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
 }
+
+.button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+form, h1, img, #download-link, .button {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Staggered animation for multiple elements */
+form { animation-delay: 0.1s; }
+h1 { animation-delay: 0.2s; }
+img { animation-delay: 0.3s; }
+#download-link { animation-delay: 0.4s; }
+.button { animation-delay: 0.5s; }
