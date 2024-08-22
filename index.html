@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Resizer</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <div class="container">
         <h1>Image Resizer</h1>
         <p>Select an image and choose the output format and required size.</p>
-
         <form id="my-form" action="" method="post">
             <input id="ip" type="file" name="photo" accept="image/*" required />
             <select id="output-format" required class="button">
@@ -23,14 +20,17 @@
             <button type="submit" class="button">Resize Image</button>
         </form>
         <a id="download-link" style="display: none;">Download Resized Image</a>
-
-
         <div class="image-container">
             <img id="img-preview">
         </div>
+        
+        <div class="extension-download">
+            <h2>Download the Extension</h2>
+            <p>Get the Image Resizer as a browser extension:</p>
+            <a href="image-resizer-extension.zip" download class="button">Download Extension</a>
+            <p class="instructions">To install: Unzip the file, go to your browser's extension page, enable "Developer mode", and click "Load unpacked". Then select the unzipped folder.</p>
+        </div>
     </div>
-
     <script src="app.js"></script>
 </body>
-
 </html>
